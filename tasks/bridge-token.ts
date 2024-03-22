@@ -14,13 +14,13 @@ task("bridge-token", "")
 		let signer = deployer;
 		let wallet = deployer.address;
 		if (args.signer) signer = new ethers.Wallet(args.signer, new ethers.providers.JsonRpcProvider(args.provider));
-		if (args.wallet) wallet = args.wallet; 
+		if (args.wallet) wallet = args.wallet;
 
 		const bondERC7092 = await ethers.getContract("BondERC7092");
 
 		await(await bondERC7092.connect(signer).approve(signer.address, args.amount.toString())).wait();
 
-		let destinationChain = hre.ethers.toBeHex(5, 32);
+		let destinationChain = hre.ethers.toBeHex(11155111, 32);
 
 		await bondERC7092.connect(signer).crossChainTransfer.estimateGas(
 			wallet,

@@ -27,7 +27,7 @@ const func: DeployFunction = async function (hre: any) {
 	const { deploy } = hre.deployments;
 
 	let _issueDate = Date.now();
-	let _maturitydate = _issueDate + 120;
+	let _maturitydate = _issueDate + 1200;
 
 	let bond: Bond = {
 		isin: "US9TH2BLOQ3T",
