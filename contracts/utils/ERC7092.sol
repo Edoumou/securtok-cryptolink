@@ -169,6 +169,8 @@ contract ERC7092 is IERC7092, InternalCall {
         _batchSpendApproval(_from, _spender, _amount);
         _batchTransfer(_from, _to, _amount, _data);
 
+        emit TransferBatch(_from, _to, _amount);
+
         return true;
     }
 }
