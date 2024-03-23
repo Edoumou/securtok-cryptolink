@@ -6,7 +6,6 @@ import "./BondData.sol";
 contract BondStorage {
     mapping(address => uint256) internal _principals;
     mapping(address => mapping(address => uint256)) internal _approvals;
-    mapping(address => uint256) internal _balances;
 
     BondData.Bond bonds;
     BondData.Issuer public issuer;
